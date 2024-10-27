@@ -6,7 +6,7 @@ Python Library for getting dlab paths
 You can install the `dlab-utils` package using pip:
 
 ```bash
-pip install dlab-utils
+pip install git+https://github.com/epfl-dlab/dlab-utils.git
 ```
 
 ## Usage
