@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+[tool.setuptools_scm]
+
+[project]
+dynamic = ["version"]
+name = "dlab-utils"
+description = "A package for utility functions for DLAB EPFL"
+readme = "README.md"
+keywords = ["utils"]
+
+license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "json"
+]
