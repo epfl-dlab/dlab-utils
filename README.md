@@ -13,7 +13,7 @@ pip install git+https://github.com/epfl-dlab/dlab-utils.git
 
 ### Model Paths
 
-To use the model path functionality, you can import the necessary functions from the `dlab-utils.paths` module. The `model_path` function returns the path to the model weights, if the model is available in the DLAB LLM weights directory, and defaults to the model name if it is not. The `available_models` function returns a list of all available models. Here's a quick tutorial:
+The `model_path` function returns the path to the model weights given the huggingface identifier, if the model is available in the DLAB LLM weights directory, and defaults to the hf model name if it is not. The `available_models` function returns a list of all available models. Here's a quick tutorial:
 
 ```python
 from dlab_utils.paths import model_path, available_models
