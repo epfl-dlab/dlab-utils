@@ -19,8 +19,8 @@ The `model_path` function returns the path to the model weights given the huggin
 from dlab_utils.paths import model_path, available_models
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-model = AutoModelForCausalLM.from_pretrained( model_path("meta-llama/Meta-Llama-3-8B-Instruct"))
-tokenizer = AutoTokenizer.from_pretrained( model_path("meta-llama/Meta-Llama-3-8B-Instruct"))
+model = AutoModelForCausalLM.from_pretrained(model_path("meta-llama/Meta-Llama-3-8B-Instruct"))
+tokenizer = AutoTokenizer.from_pretrained(model_path("meta-llama/Meta-Llama-3-8B-Instruct"))
 
 print(available_models())
 ```
