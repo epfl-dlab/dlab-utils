@@ -17,4 +17,5 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
+    "huggingface-hub",
 ]
