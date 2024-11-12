@@ -32,6 +32,7 @@ def download_model(repo_id: str):
 
     with open(MODEL_DIRECTORY_V2, "w") as f:
         json.dump(model_directory, f, indent=4)
+    return model_directory
 
 def get_model_directory() -> dict:
     # Will be removed in the future
@@ -52,7 +53,8 @@ def model_path(model_name: str) -> str:
 
     if model_name not in model_directory:
         warnings.warn(f"DLABUTILS: Model {model_name} not found in DLAB LLM weights directory. Adding to directory...")
-        download_model(model_directory, model_name)
+        model_directory = download_model(model_name)
+
     return model_directory[model_name]["path"]
 
 def available_models() -> list[str]:
