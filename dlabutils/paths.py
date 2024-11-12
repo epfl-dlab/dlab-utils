@@ -9,7 +9,6 @@ MODEL_HUB = "/dlabscratch1/public/llm_weights/"
 # V2 will be the new model directory format. Will be removed in the future and only V2 will be supported.
 MODEL_DIRECTORY_V2 = MODEL_HUB + "model_directory_v2.json"
 MODEL_DIRECTORY_V1 = MODEL_HUB + "model_directory.json"
-cwd = os.getcwd()
 
 def download_model(repo_id: str):
     print(f"DLABUTILS: Downloading model {repo_id} to {MODEL_HUB}")
