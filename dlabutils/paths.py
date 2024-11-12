@@ -16,7 +16,7 @@ def download_model(repo_id: str):
     snapshot_download(
         repo_id=repo_id,
         local_dir_use_symlinks=False,
-        local_dir=os.path.join(MODEL_HUB, repo_id.split("/")[-1]),
+        local_dir=os.path.join(MODEL_HUB, repo_id.replace("/", "_")),
         ignore_patterns=["original/**"],
     )
 
@@ -25,7 +25,7 @@ def download_model(repo_id: str):
 
     # save to model_directory.json
     model_directory[repo_id] = {
-        "path": os.path.join(MODEL_HUB, repo_id.split("/")[-1]),
+        "path": os.path.join(MODEL_HUB, repo_id.replace("/", "_")),
         "download_date": datetime.datetime.now().isoformat(),
         "user": os.environ.get("USER", "unknown"),
     }
