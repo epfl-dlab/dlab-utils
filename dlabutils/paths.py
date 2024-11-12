@@ -11,7 +11,7 @@ MODEL_DIRECTORY_V2 = MODEL_HUB + "model_directory_v2.json"
 MODEL_DIRECTORY_V1 = MODEL_HUB + "model_directory.json"
 cwd = os.getcwd()
 
-def download_model(model_directory: dict, repo_id: str):
+def download_model(repo_id: str):
     print(f"DLABUTILS: Downloading model {repo_id} to {MODEL_HUB}")
     # to target directory
     snapshot_download(
@@ -20,6 +20,9 @@ def download_model(model_directory: dict, repo_id: str):
         local_dir=os.path.join(MODEL_HUB, repo_id.split("/")[-1]),
         ignore_patterns=["original/**"],
     )
+
+    # reload model directory to ensure non-blocking
+    model_directory = get_model_directory()
 
     # save to model_directory.json
     model_directory[repo_id] = {
