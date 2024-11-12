@@ -31,7 +31,7 @@ def download_model(repo_id: str):
     }
 
     with open(MODEL_DIRECTORY_V2, "w") as f:
-        json.dump(model_directory, f)
+        json.dump(model_directory, f, indent=4)
 
 def get_model_directory() -> dict:
     # Will be removed in the future
